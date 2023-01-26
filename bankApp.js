@@ -74,7 +74,9 @@ const signUp= ()=>{
 
 
     currentClientIndex = localStorage.getItem("currentClientIndex")
-    allClients = JSON.parse(localStorage.getItem("localAllClients"));
+    if(localStorage.length > 0){
+      allClients = JSON.parse(localStorage.getItem("localAllClients"));
+    }
     const userDetails = ()=> {
        allClients.map((eachUser, index)=>{
            userName.innerHTML = `${allClients[currentClientIndex].FirstName}
@@ -82,5 +84,5 @@ const signUp= ()=>{
            userAcctNo.innerHTML =`${allClients[currentClientIndex].AccountNumber}`
        })
       
-      //  localStorage.setItem("localAllClients", JSON.stringify(allClients))
+       localStorage.setItem("localAllClients", JSON.stringify(allClients))
     }
