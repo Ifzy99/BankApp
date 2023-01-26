@@ -15,9 +15,12 @@ const toLogIn = ()=>{
 //* SIGN UP *//
 
 let allClients = []
-  if(localStorage.localAllClients){
-    oldData = JSON.parse(localStorage.getItem("localAllClients"));
-    allClients = oldData
+ if(localStorage.lenght>0){
+      allClients =JSON.parse(localStorage.getItem("localAllClients"));
+    }
+//   if(localStorage.localAllClients){
+//     oldData = JSON.parse(localStorage.getItem("localAllClients"));
+//     allClients = oldData
   }
 
 const signUp= ()=>{
