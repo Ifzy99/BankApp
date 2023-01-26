@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    color: #fff;
+    font-weight: bold;
+}
+    /* TOP CONTAINER SECTION */
+
+#top-container{
+    background-color: #1e3063ed;
+    color: #fff;
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2; */
+}
+
+.dashIcon{
+    color: #fff;
+}
+
+.offcanvas-container{
+    position: fixed;
+    top: 0;
+}
+
+.offcanvas-body{
+    background-color: #1e3063ed;
+}
+
+.user{
+    width: 90%;
+    display: flex;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.user-image{
+    width: 30%;
+    text-align:left; 
+    margin: 0 30px 0 0; 
+    padding: 5px;
+}
+
+.user-image i{
+    width: 30%;
+    padding: 3%;
+}
+
+.user-message{
+    width: 30%;
+    margin: 0 30px; 
+}
+
+.user-message h4{
+    text-align: left;
+    width: 50%;
+    
+
+}
+
+.user-report{
+    width: 33%;
+    margin: 40px 0 0 55px; 
+    text-align: right;
+}
+
+
+.balance{
+    margin: 10px auto;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background-color:#7B8FA1;
+    width: 80%;
+    padding: 10px;
+}
+
+.acctNo{
+    display: flex;
+    margin-top: 5px;
+   text-align: left;
+}
+
+.amount{
+    display: flex;
+    
+}
+
+
+    /* OPERATION SECTION  */
+
+.wrapper{
+    width: 100%;
+ }
+ 
+ .user-operation{
+    text-align: center;
+    padding: 5% 2%;
+ }
+
+.uIcon{
+    width: 30%;
+    background-color: #fff;
+    color: #f7dc43;
+    border-radius: 50%;
+    padding: 5% 0;
+}
+
+.operation-text{
+    margin-top: 10px;
+}
+
+.carousel-item img{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* FOOTER SECTION */
+
+#footer{
+    background-color:#1e3063ed ;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+}
+
+.footer-items{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer-text{
+    font-size: 12px;
+    margin: 0;
+}
+
+.footer-icons:hover{
+    color: #f7dc43;
+}
+
+
+

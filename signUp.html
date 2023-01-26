@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="signUp.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="header-image">
+                <img src="first logo.png" alt="">
+            </div>
+
+        <div class="row">
+            <div class="col-9 mx-auto shadow-md">
+                <div class="header-text">
+                    <h1>Sign Up</h1>
+                    <div class="sub-header-text">Please ensure that the information provided are correct as this will be used for validation</div>
+                </div>
+                <h6>First Name</h6>
+                <input class="details-box" type="text" placeholder="" id="fName">
+                <h6>Last Name</h6>
+                <input class="details-box" type="text" placeholder="" id="lName">
+                <h6>Middle Name</h6>
+                <input class="details-box" type="text" placeholder="" id="mName" >
+                <h6>Email</h6>
+                <input class="details-box" type="text" placeholder="" id="uMail">
+                <h6>Password</h6>
+                <input class="details-box" type="password" placeholder="" id="pWord">
+                <h6>Account Number</h6>
+                <input class="details-box" type="text" placeholder="" id="aNumber">
+                <h6>Pin</h6>
+                <input class="details-box" type="password" placeholder="" id="uPin">
+                <h6>Confirm Pin</h6>
+                <input class="details-box" type="password" placeholder="" id="cPin">
+                <h6>Bank Verification Number</h6>
+                <input class="details-box" type="text" placeholder="" id="bvn">
+                <h6>Phone Number</h6>
+                <input class="details-box" type="text" placeholder="" id="pNumber">
+                <h6>Address</h6>
+                <input class="details-box" type="text" placeholder="" id="location">
+                <h6>City</h6>
+                <input class="details-box" type="text" placeholder="" id="locale">
+                <h6>State</h6>
+                <input class="details-box" type="text" placeholder="" id="uState">
+                <h6>Date of Birth</h6>
+                <input class="details-box" type="date" placeholder="" id="dob">
+                <h6>Gender</h6>
+                <select class="details-box" name="" id="uGender">
+                    <option value=""></option>
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                </select>
+                <h6>Marital Status</h6>
+                <select class="details-box" name="" id="mStatus">
+                    <option value=""></option>
+                    <option value="">Single</option>
+                    <option value="">Married</option>
+                    <option value="">Divorced</option>
+                    <option value="">Widowed/Widower</option>
+                </select>
+                <h6>Occupation</h6>
+                <select class="details-box" name="" id="work">
+                    <option value=""></option>
+                    <option value="">Student</option>
+                    <option value="">Self-employed</option>
+                    <option value="">Employed</option>
+                </select>
+
+                <button class="btn btn-lg btn-outline-secondary signIn-btn" onclick="signUp()">Sign Up</button>
+
+
+                <div class="Sign-Up-footer">
+                    <hr class="lineOne">
+                    <p class="Sign-Up-footer-text">Or</p>
+                    <hr class="lineTwo">
+                </div>
+                <div class="cta1">
+                      <a href="login.html" class="cta-text1">Login</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    <script src="bankApp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+
+h1 {
+    font-weight: 900;
+    color: #f7dc43;
+    text-align: left;
+}
+
+hr{
+    border-style: dotted none none;
+    border-color: #b2bdbd;
+    border-width: 3px;
+    height: 0px;
+    margin: 100px auto;
+    width: 30%;
+}
+
+.header-image {
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+.header-image img {
+    width: 400px;
+}
+
+.login-menu {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 4% 9%;
+    justify-content: center;
+}
+
+.login-menu-items {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    background-color: #030d14;
+    padding: 20px 8px;
+   
+}
+
+.login-icon {
+    text-align: center;
+    color: #f7dc43;
+}
+
+.login-icon .fa {
+    width: 100%;
+}
+
+.text {
+    font-family: none;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: #fff;
+    padding: 10px 2px;
+}
+
+.logIn-header {
+    width: 100%;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 40px;
+}
+
+.details-box{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.reminder {
+    color: #fff;
+    display: flex;
+    margin: 5px 0;
+}
+
+.reminder input {
+    height: 23px;
+    margin: 0 5px;
+}
+
+.logIn-btn {
+    background-color: #f7dc43;
+    color: #fff;
+    margin: 6px 0;
+    width: 100%;
+   
+}
+
+.pre-footer {
+    color: #ff0000;
+    text-align: right;
+    margin: 11px 0;
+}
+
+.pre-cta{
+    margin: 30px 0;
+    color: #fff;
+}
+
+.pre-cta p{
+    text-align: center;
+}
+
+.cta{
+    color:#fff ;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cta a{
+    text-decoration: none;
+    color: #f7dc43;
+    margin-right:5px ;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 791px) {
+    .text h3 {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 513px) {
+    .text h3 {
+        font-size: 0.7em;
+    }
+
+    .header-image img{
+        width: 50%;
+    }
+}

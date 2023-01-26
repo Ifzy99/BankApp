@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif; 
+    color: #fff; 
+    background-image: url(./bg.webp);
+}
+
+h6{
+    text-align:left ;   
+}
+
+.navbar{
+    margin-top: 10px;
+}
+
+#lPage{
+    margin-top: 60px;
+}
+
+.lPage-body{
+    margin: 20px 0;
+}
+
+.lpage-cont{
+    background-color: #030d14;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 2% 4%;
+}
+
+.lpage-cont h6{
+    color: #f7dc43;
+    margin: 0;
+}
+
+.lpage-cont p{
+    text-align:left ;
+}
+
+.lpage-icon{
+    text-align: right;
+}
+
+.cfh{
+    margin: 50px 0;
+}
+
+
+
+
+
+
+@media only screen and (max-width:791px){
+    
+    .navbar-image img{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 513px) {
+    .navbar-image img{
+        width: 50%;
+    }
+
+} 
