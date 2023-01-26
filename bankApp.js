@@ -16,16 +16,9 @@ const toLogIn = ()=>{
 
 let allClients = []
   if(localStorage.localAllClients){
-    allClients = JSON.parse(localStorage.getItem("localAllClients"));
-    
+    oldData = JSON.parse(localStorage.getItem("localAllClients"));
+    allClients = oldData
   }
-
-
-// let allClients = []
-//  if(localStorage.lenght>0){
-//       allClients =JSON.parse(localStorage.getItem("localAllClients"));
-//     }
-
 
 const signUp= ()=>{
       let clientsData= {
