@@ -15,13 +15,17 @@ const toLogIn = ()=>{
 //* SIGN UP *//
 
 let allClients = []
- if(localStorage.lenght>0){
-      allClients =JSON.parse(localStorage.getItem("localAllClients"));
-    }
-//   if(localStorage.localAllClients){
-//     oldData = JSON.parse(localStorage.getItem("localAllClients"));
-//     allClients = oldData
+  if(localStorage.localAllClients){
+    allClients = JSON.parse(localStorage.getItem("localAllClients"));
+    
   }
+
+
+// let allClients = []
+//  if(localStorage.lenght>0){
+//       allClients =JSON.parse(localStorage.getItem("localAllClients"));
+//     }
+
 
 const signUp= ()=>{
       let clientsData= {
