@@ -12,7 +12,7 @@ h3{
 #top-container{
     background-color: #1e3063ed;
     color: #fff;
-    /* position: fixed;
+    /* /* position: fixed; */
     top: 0;
     width: 100%;
     z-index: 2; */
@@ -22,10 +22,6 @@ h3{
     color: #fff;
 }
 
-.offcanvas-container{
-    position: fixed;
-    top: 0;
-}
 
 .offcanvas-body{
     background-color: #1e3063ed;
@@ -85,13 +81,26 @@ h3{
 }
 
 .amount{
-    display: flex;
-    
+    display: flex;   
+}
+
+.user-amount{
+    margin-left:3px;
+}
+
+   /* TRANSACTION HISTORY */
+
+.thm{
+    background-color: #1e3063ed ;
+    color: #fff;
 }
 
 
     /* OPERATION SECTION  */
 
+#operation{
+    margin-top: -30px;
+}
 .wrapper{
     width: 100%;
  }
@@ -142,6 +151,15 @@ h3{
 
 .footer-icons:hover{
     color: #f7dc43;
+}
+
+
+@media screen and (max-width: 500px){
+    .user-report h6{
+       font-size: 10px;
+        
+    }
+    
 }
 
 

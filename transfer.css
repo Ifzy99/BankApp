@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#t-header{
+    background-color:  #1e3063ed;
+    color: #fff;
+    padding: 10px;
+}
+
+.t-header-text{
+    text-align: center;
+}
+
+
+
+#t-body{
+ padding: 10px;
+}
+
+.t-body-header{
+    margin: 20px 0;
+}
+
+.fav-add{
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 7px;
+
+}
+
+.fav-icon{
+    margin: 0 auto;
+    margin-top: 10px;
+    width:50%;
+    background-color: #f7dc43;
+    color: #fff;
+    border-radius: 50%; 
+    padding: 2%;
+}
+
+.fav-text{
+  margin: 10px;   
+}
+
+
+
+.t-type-container{
+    margin-bottom: 20px;
+}
+
+.FB-icon{
+    text-align: center;
+    color: #fff;
+    background-color: #f7dc43 ;
+    border-radius: 50%;
+    width: 10%;
+    padding: 10px;
+    margin: 10px 25px;
+}
+
+.t-type-text{
+  padding: 12px;
+  text-align: left;
+}
+
+.arrow{
+    padding: 12px;
+}
+
+
+

@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color:  #1e3063ed;
+    color: #fff;
+}
+
+.b_fOffcanvas{
+    background-color: #1e3063ed;
+}
+
+.dashIcon{
+    color: #fff;
+}

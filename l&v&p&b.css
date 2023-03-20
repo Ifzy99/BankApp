@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color:  #1e3063ed;
+    color: #fff;
+}
+
+.lvpbOffcanvas{
+    background-color: #1e3063ed;
+}
+
+.dashIcon{
+    color: #fff;
+}
+
+
+
+.lvpb-container{
+    width: 90%;
+    margin: 30px auto;
+    margin-bottom: 20px;
+}
+
+.lvpb-icon{
+    text-align: center;
+    color: #fff;
+    background-color: #f7dc43 ;
+    border-radius: 50%;
+    width: 10%;
+    padding: 10px;
+    margin: 10px 25px;
+}
+
+.lvpb-text{
+  padding: 12px;
+  text-align: left;
+}
+
+.arrow{
+    padding: 12px;
+}
+

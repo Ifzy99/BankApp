@@ -21,32 +21,39 @@ let allClients = []
   }
 
 const signUp= ()=>{
-      let clientsData= {
-        FirstName:fName.value,
-        MiddleName:mName.value,
-        LastName:lName.value,
-        Email:uMail.value,
-        Password:pWord.value,
-        AccountNumber:aNumber.value,
-        Pin:uPin.value,
-        ConfirmPin:cPin.value,
-        BankVerificationNumber:bvn.value,
-        PhoneNumber:pNumber.value,
-        Address:location.value,
-        City:locale.value,
-        State:uState.value,
-        DateOfBirth:dob.value,
-        Gender:uGender.value,
-        MaritalStatus:mStatus.value,
-        Occupation:work.value,
-        allTodo:[],
-        balance:5000,
-    }
-    console.log(clientsData)
-    console.log(allClients)
-    allClients.push(clientsData);
-    localStorage.setItem("localAllClients", JSON.stringify(allClients))
-    window.location.href = "login.html";
+  if(fName.value == "" && lName.value == "" && uMail.value == "" && pWord.value == ""){
+    alert("Fill in your deatils")
+  }else{
+    let clientsData= {
+      FirstName:fName.value,
+      MiddleName:mName.value,
+      LastName:lName.value,
+      Email:uMail.value,
+      Password:pWord.value,
+      AccountNumber:aNumber.value,
+      Pin:uPin.value,
+      ConfirmPin:cPin.value,
+      BankVerificationNumber:bvn.value,
+      PhoneNumber:pNumber.value,
+      Address:location.value,
+      City:locale.value,
+      State:uState.value,
+      DateOfBirth:dob.value,
+      Gender:uGender.value,
+      MaritalStatus:mStatus.value,
+      Occupation:work.value,
+      allTodo:[],
+      balance:50000,
+      airtimeHistory: [],
+      transferHistory: []
+  }
+  // console.log(clientsData)
+  // console.log(allClients)
+  allClients.push(clientsData);
+  localStorage.setItem("localAllClients", JSON.stringify(allClients))
+  window.location.href = "login.html";
+  }
+      
 }
                 
 
@@ -82,7 +89,225 @@ const signUp= ()=>{
            userName.innerHTML = `${allClients[currentClientIndex].FirstName}
            `
            userAcctNo.innerHTML =`${allClients[currentClientIndex].AccountNumber}`
+           userBalanceAmount.innerHTML = `<h1>${allClients[currentClientIndex].balance}</h1>`
+          //  userBalance.innerHTML = `<h1>${allClients[currentClientIndex].balance}</h1>`
        })
+      }
       
-       localStorage.setItem("localAllClients", JSON.stringify(allClients))
+       function recharge(){
+        if (showUserAccDetails.value != allClients[currentClientIndex].AccountNumber || clientPhoneNumber.value == "" || rechargeAmt.value == "") {
+          alert("Fill the required details")
+        }else if (rechargeAmt.value <= allClients[currentClientIndex].balance) {
+          let userRechargeReceipt = {
+            debitAcc: allClients[currentClientIndex].AccountNumber,
+            userPhoneNumber: clientPhoneNumber.value,
+            dateOfAirtime: new Date().toDateString(),
+            amoountRecharge: rechargeAmt.value,
+          }
+          allClients[currentClientIndex].airtimeHistory.push(userRechargeReceipt);
+        localStorage.setItem("localAllClients", JSON.stringify(allClients))
+        } else {
+          alert("Airtime Recharge Failed, Try Again")
+        }
+        window.location.href = "airtimePreReceipt.html"
+        
+      }
+      
+      showUserBalanceOnModal = () => {
+            userBalance.innerHTML =`<h1 style="color:white;"> ${allClients[currentClientIndex].balance}</h1> `
+            userAccountNo.innerHTML = allClients[currentClientIndex].AccountNumber
+          }
+
+          dropUserAccDetails = () => {
+            showUserAccDetails.value = allClients[currentClientIndex].AccountNumber
+          }
+
+          displayAirtimeDetails = () => {
+            allClients = JSON.parse(localStorage.getItem("localAllClients"));
+            eachAirtime = allClients[currentClientIndex].airtimeHistory
+            // allClients.map((eachUser, index)=>{
+              for (let index = 0; index < eachAirtime.length; index++) {
+                rBody.innerHTML = `
+                <div class="clientAcct">
+                <div class="frm">
+                    <h6>From: ${eachAirtime[index].debitAcc}</h6>
+                </div>
+                <div class="acctNo">
+                    <div>Account</div>
+                    <div class="user-acct-No" id="userAcctNo"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="clientAcct">
+                <div class="to">
+                    <h6>To: ${eachAirtime[index].userPhoneNumber}</h6>
+                </div>
+                <div class="clientNumber">
+                    <div id="clientPhoneNumber"></div>   
+                </div>
+            </div>
+            <hr>
+            <div class="clientAcct">
+                <div class="date">
+                    <h6>Date: ${eachAirtime[index].dateOfAirtime}</h6>
+                </div>
+                <div class="theDate">
+                    <div id=""></div>   
+                </div>
+            </div>
+            <hr>
+            <div class="clientAcct">
+                <div class="amt">
+                    <h6>Amount: ${eachAirtime[index].amoountRecharge}</h6>
+                </div>
+                <div class="amtDetails">
+                    <div id="rechargeAmt"></div>   
+                </div>
+            </div>
+            <hr>
+                `
+              }
+             
+            // })
+            
+          }
+
+          confirmRecharge = () => {
+            eachAirtime = allClients[currentClientIndex].airtimeHistory
+            if (allClients[currentClientIndex].Pin == userPin.value) {
+              for (let index = 0; index < eachAirtime.length; index++) {
+                allClients[currentClientIndex].balance = Number(allClients[currentClientIndex].balance) - Number(eachAirtime[index].amoountRecharge)
+              }
+          localStorage.setItem("localAllClients", JSON.stringify(allClients))
+          alert("Recharge Successful")
+          window.location.href = "dashboard.html"
+            } else {
+              alert("Enter correct pin")
+            }
+          }
+
+          deposit = () => {
+            allClients[currentClientIndex].balance = Number(allClients[currentClientIndex].balance) + Number(userPin.value)
+          localStorage.setItem("localAllClients", JSON.stringify(allClients))
+
+          }
+
+          showUserHistory = () => {
+            clientHistory.innerHTML = ""
+            allClients = JSON.parse(localStorage.getItem("localAllClients"));
+            eachAirtime = allClients[currentClientIndex].airtimeHistory
+            for (let index = 0; index < eachAirtime.length; index++) {
+            clientHistory.innerHTML += `
+            <div class="container-fluid shadow d-flex flex-column gap-4">
+            <div class="d-flex w-100 justify-content-between">
+                <div>${eachAirtime[index].debitAcc}</div>
+                <div>${eachAirtime[index].dateOfAirtime}</div>
+            </div>
+            <div class="d-flex w-100 justify-content-between">
+                <div>${eachAirtime[index].userPhoneNumber}</div>
+                <div><i class="fa-solid fa-naira-sign"></i>${eachAirtime[index].amoountRecharge}</div>
+            </div>
+          </div>
+            `
+            }
+          }
+
+
+      sendToReceipt = ()=>{
+        if (showUserAccDetails.value != allClients[currentClientIndex].AccountNumber || creditAcctDetails.value == "" || transferAmount.value == "" || transferNarration.value == "") {
+          alert("Fill the required details")
+      }else if (transferAmount.value <= allClients[currentClientIndex].balance){
+        let userTransferReceipt = {
+          debitAcc: allClients[currentClientIndex].AccountNumber,
+          creditAccountDetails : creditAcctDetails.value,
+          // creditorBank: creditorBankDetails.value,
+          dateOfTransfer: new Date().toDateString(),
+          amountTransferred: transferAmount.value,
+          narrationOfTransfer:transferNarration.value,
+
+        }
+        allClients[currentClientIndex].transferHistory.push(userTransferReceipt);
+        localStorage.setItem("localAllClients", JSON.stringify(allClients))
+      }else{
+        alert("Transfer Failed, Try Again")
+      }
+       window.location.href="transferPreReceipts.html"
+    }
+
+    displayTransferDetails = ()=>{
+      allClients = JSON.parse(localStorage.getItem("localAllClients"));
+      eachTransfer = allClients[currentClientIndex].transferHistory
+      for (let index = 0; index < eachTransfer.length; index++){
+        trBody.innerHTML = `
+        <div class="clientAcct">
+        <div class="frm">
+            <h6>From: ${eachTransfer[index].debitAcc}</h6>
+        </div>
+        <div class="acctNo">
+            <div class="tOfAcct">SAVINGS ACCOUNT</div>
+            <div class="user-acct-No" id="userAcctNo"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="frm">
+            <h6>To: ${eachTransfer[index].creditAccountDetails}</h6>
+        </div>
+        <div class="acctNo">
+            <div class="c-Name"></div>
+            <div class="user-acct-No" id="userAcctNo"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="bank">
+            <h6>Bank: ${eachTransfer[index].creditorBank}</h6>
+        </div>
+        <div class="c-Bank">
+            <div id=""></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="date">
+            <h6>Date: ${eachTransfer[index].dateOfTransfer}</h6>
+        </div>
+        <div class="theDate">
+            <div id=""></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="amt">
+            <h6>Amount: ${eachTransfer[index].amountTransferred}</h6>
+        </div>
+        <div class="amtDetails">
+            <div id="rechargeAmt"></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="narration">
+            <h6>Narration: ${eachTransfer[index].narrationOfTransfer}</h6>
+        </div>
+        <div class="UN">
+            <div id=""></div>   
+        </div>
+    </div>
+        `
+      }
+    }
+
+    confirmTransfer = ()=>{
+      eachTransfer = allClients[currentClientIndex].transferHistory
+      if (allClients[currentClientIndex].Pin == userPin.value) {
+        for (let index = 0; index < eachTransfer.length; index++) {
+          allClients[currentClientIndex].balance = Number(allClients[currentClientIndex].balance) - Number(eachTransfer[index].amountTransferred)
+        }
+        localStorage.setItem("localAllClients", JSON.stringify(allClients))
+        alert("Transfer Successful")
+        window.location.href = "dashboard.html"
+    } else {
+      alert("Enter correct pin")
+    }
     }

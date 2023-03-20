@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+nav{
+    background-color:  #1e3063ed;
+    color: #fff;
+}
+
+.settingsOffcanvas{
+    background-color: #1e3063ed;
+}
+
+.dashIcon{
+    color: #fff;
+}
+
+#s-body{
+    margin: 15px auto;
+}
+
+.wrapper{
+    width:90%;
+    margin: 20px auto;
+
+}
+
+.settings{
+    display: flex;
+    gap: 30%;
+    padding: 4%;
+    border-radius: 6px;
+}
+ 
+.s-Icon{
+    color:  #f7dc43;
+    margin: 0 5px;
+}
+
+.i_t{
+    display: flex;
+    gap: 30px;
+}
+
+.wrapper .arrow{
+    margin: 0 auto;
+}

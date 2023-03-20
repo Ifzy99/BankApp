@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="airtime.css">
+
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <button class="border-0 text-light btn"onclick="window.location.href ='dashboard.html'"><i class="fa-solid fa-arrow-left fa-2x"></i></button>
+        <h3>Buy Airtime</h3>
+        <div></div>
+    </nav>
+
+    <section id="a-body">
+        <div class="container-fluid">
+            <div class="a-body-header">
+                <h4>MY FAVORITES</h4>
+            </div>
+            <div class="fav-add shadow-lg">
+                <div class="fav-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="fav-text">
+                    <p>Add</p>
+                </div>
+            </div>
+
+            <div class="wrapper">
+
+                <div class="a-type-container">
+                    <div class="a-type shadow-lg">
+                        <div class="row">
+                            <div class="col-2 a-icon">
+                                <i class="fa-solid fa-mobile"></i>
+                            </div>
+                            <div class="col-8 a-type-text">
+                                <p>MY CONTACT LIST</p>
+                            </div>
+                            <div class="col-1 arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-type shadow-lg">
+                    <div class="row">
+                        <div class="col-2 a-icon">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <div class="col-8 a-type-text">
+                            <p>SELECT FROM BENEFICIARY</p>
+                        </div>
+                        <div class="col-1 arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<section id="details" class="shadow-lg">
+       
+
+        <div class="t-details">
+           
+            <div class="t-details-input">
+                <!-- Button trigger modal -->
+
+                <div class="t-input-details" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <p>From Account</p>
+                    <input type="text" placeholder="Select account to debit" onclick="showUserBalanceOnModal()" id="showUserAccDetails">
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen-sm-down">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title fs-5" id="staticBackdropLabel">Select account to debit</div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="user-Acct" onclick="dropUserAccDetails()" style="cursor: pointer;" data-bs-dismiss="modal">
+                                    <div class="user-Acct-header">
+                                        <div class="t-of-Acct">
+                                            SAVINGS ACCOUNT:
+                                        </div>
+
+                                        <div class="u-Acct-details ms-2" id="userAccountNo">
+                                        </div>
+                                    </div>
+                                    <div class="u-Amount d-flex gap-1">
+                                        <i class="fa-solid fa-naira-sign fa-2x text-light"></i>
+                                        <div id="userBalance"></div>
+
+                                        <!-- <div id="userBalanceAmount"></div> -->
+                                    </div>
+
+                                </div>
+                            </div <div class="modal-footer">
+                            <div class="" data-bs-dismiss="modal">Cancel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="t-input-details">
+            <p>Select Biller</p>
+            <select id="">
+                <option value=""></option>
+                <option value="">MTN</option>   
+                <option value="">GLO</option>   
+                <option value="">9 Mobile</option>   
+                <option value="">Airtel</option>   
+            </select>
+        </div>
+
+
+        <div class="t-input-details">
+            <input type="text" placeholder="Enter Phone Number" id="clientPhoneNumber">
+        </div>
+
+
+        <div class="t-input-details">
+            <input type="text" placeholder="Amount" id="rechargeAmt">
+        </div>
+
+
+        <button class="btn t-btn" onclick="recharge()">CONTINUE</button>
+       
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+        <script src="./fontawesome-free-6.2.0-web/js/all.js"></script>
+        <script src="bankApp.js"></script>
+</body>
+</html>

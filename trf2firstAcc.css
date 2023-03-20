@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav{
+    background-color: #1e3063ed;
+    color: #fff;
+}
+
+input{
+    border: none;
+    width: 100%;
+}
+
+
+
+.t-details{
+    margin: 30px 0;
+}
+
+.t-details .t-details-header p{
+    font-size: 1.5rem;
+}
+
+.u-acct{
+    margin: 0 auto;
+    width: 90%;
+    text-align: left;
+    border-bottom: 1px solid #7B8FA1;
+}
+
+.u-acct p{
+    margin: 5px 0;   
+}
+
+.t-input-details p{
+    font-size: 0.7em;
+}
+
+.t-input-details{
+    width: 90%;
+    text-align: left;
+    margin: 50px auto;
+    border-bottom: 1px solid #7B8FA1;
+}
+
+.modal-body .user-Acct{
+    width: 90%;
+    margin: 20px auto;
+    background-color: #7B8FA1;
+    border-radius: 7px;
+}
+
+.modal-body .user-Acct-header{
+    display: flex;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+.modal-body .u-Amount{
+    text-align: left;
+    padding: 10px;
+}
+
+.t-btn{
+    background-color: #f7dc43;;
+    width: 70%;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.t-btn:hover{
+    background-color: #f7dc43;
+}
