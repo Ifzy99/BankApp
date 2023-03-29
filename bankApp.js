@@ -114,8 +114,11 @@ const signUp= ()=>{
       }
       
       showUserBalanceOnModal = () => {
-            userBalance.innerHTML =`<h1 style="color:white;"> ${allClients[currentClientIndex].balance}</h1> `
-            userAccountNo.innerHTML = allClients[currentClientIndex].AccountNumber
+        // allClients.map((client, index) => {
+          userBalances.innerHTML =`<h1 style="color:white;"> ${allClients[currentClientIndex].balance}</h1> `
+            userAccountNos.innerHTML = allClients[currentClientIndex].AccountNumber;
+        // })
+            
           }
 
           dropUserAccDetails = () => {
@@ -209,6 +212,7 @@ const signUp= ()=>{
             </div>
           </div>
             `
+            
             }
           }
 
@@ -239,6 +243,77 @@ const signUp= ()=>{
       eachTransfer = allClients[currentClientIndex].transferHistory
       for (let index = 0; index < eachTransfer.length; index++){
         trBody.innerHTML = `
+        <div class="clientAcct">
+        <div class="frm">
+        <h6>From: </h6>
+            <h6 id="debt">${eachTransfer[index].debitAcc}</h6>
+        </div>
+        <div class="acctNo">
+            <div class="tOfAcct">SAVINGS ACCOUNT</div>
+            <div class="user-acct-No" id="userAcctNo"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="frm">
+        <h6>To: </h6>
+            <h6 id="credt">${eachTransfer[index].creditAccountDetails}</h6>
+        </div>
+        <div class="acctNo">
+            <div class="c-Name"></div>
+            <div class="user-acct-No" id="userAcctNo"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="bank">
+        <h6>Bank: </h6>
+            <h6 id="credtBank">${eachTransfer[index].creditorBank}</h6>
+        </div>
+        <div class="c-Bank">
+            <div id=""></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="date">
+        <h6>Date: </h6>
+            <h6 id="credtDate">${eachTransfer[index].dateOfTransfer}</h6>
+        </div>
+        <div class="theDate">
+            <div id=""></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="amt">
+        <h6>Amount: </h6>
+            <h6 id="moneyTransf">${eachTransfer[index].amountTransferred}</h6>
+        </div>
+        <div class="amtDetails">
+            <div id="rechargeAmt"></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="clientAcct">
+        <div class="narration">
+        <h6>Narration: </h6>
+            <h6 id="moneyNarra">${eachTransfer[index].narrationOfTransfer}</h6>
+        </div>
+        <div class="UN">
+            <div id=""></div>   
+        </div>
+    </div>
+        `
+      }
+    }
+
+
+    userTransferReceipt = ()=>{
+      allClients = JSON.parse(localStorage.getItem("localAllClients"));
+      eachTransfer = allClients[currentClientIndex].transferHistory
+      for (let index = 0; index < eachTransfer.length; index++){
+        receiptBody.innerHTML = `
         <div class="clientAcct">
         <div class="frm">
             <h6>From: ${eachTransfer[index].debitAcc}</h6>
@@ -298,16 +373,30 @@ const signUp= ()=>{
       }
     }
 
-    confirmTransfer = ()=>{
+    confirmTransfer = (param)=>{
       eachTransfer = allClients[currentClientIndex].transferHistory
-      if (allClients[currentClientIndex].Pin == userPin.value) {
-        for (let index = 0; index < eachTransfer.length; index++) {
-          allClients[currentClientIndex].balance = Number(allClients[currentClientIndex].balance) - Number(eachTransfer[index].amountTransferred)
+      eachTransfer.map((eachUser, index) => {
+      //   for (let index = 0; index < eachTransfer.length; index++) {
+      //     alert(eachTransfer[param].amountTransferred)
+          
+      //   }
+      if (userPin.value === allClients[currentClientIndex].Pin) {
+        let userTransferHistory = {
+          debitAc: debt.innerHTML,
+          creditAccountDetail : credt.innerHTML,
+          // creditorBank: creditorBankDetails.value,
+          dateOfTransfe: credtDate.innerHTML,
+          amountTransferre: moneyTransf.innerHTML,
         }
+        allClients[currentClientIndex].airtimeHistory.push(userTransferHistory);
+        allClients[currentClientIndex].balance = Number(allClients[currentClientIndex].balance) - Number(eachTransfer[index].amountTransferred)
         localStorage.setItem("localAllClients", JSON.stringify(allClients))
-        alert("Transfer Successful")
-        window.location.href = "dashboard.html"
-    } else {
-      alert("Enter correct pin")
+        window.location.href = "receipt.html"
+      } else {
+        alert("Enter correct pin")
+      }
+      })
+        
     }
-    }
+
+    

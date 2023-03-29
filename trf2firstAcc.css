@@ -64,9 +64,37 @@ input{
     text-align: left;
     padding: 10px;
 }
+.creditorsBankSearchContainer{
+    position: fixed;
+    top:0;
+    z-index: 0;
+    width:100%;
+    margin: 0 auto;
+}
+.creditorsBankSearch{
+    margin: 20px auto;
+    border: 5px solid #bbbec2;
+    padding: 2%;
+    border-radius: 5%;
+    width: 90%;
+}
+
+.bankListContainer{
+    margin-top: 100px;
+}
+
+.bankList{
+    color: #fff;
+    width: 90%;
+    background-color: #7B8FA1;
+    margin: 20px auto;
+    border-radius: 10%;
+    padding: 3%;
+    text-align: left;
+}
 
 .t-btn{
-    background-color: #f7dc43;;
+    background-color: #f7dc43;
     width: 70%;
     border-radius: 20px;
     font-weight: bold;
@@ -74,4 +102,8 @@ input{
 
 .t-btn:hover{
     background-color: #f7dc43;
+}
+
+.frm {
+    display: flex;
 }

@@ -52,14 +52,15 @@
                                 <div class="user-Acct" onclick="dropUserAccDetails()" style="cursor: pointer;" data-bs-dismiss="modal">
                                     <div class="user-Acct-header">
                                         <div class="t-of-Acct">
-                                            SAVINGS ACCOUNT
+                                            SAVINGS ACCOUNT: 
                                         </div>
 
-                                        <div class="u-Acct-details" id="userAccountNo">
+                                        <div class="u-Acct-details" id="userAccountNos">
                                         </div>
                                     </div>
-                                    <div class="u-Amount">
+                                    <div class="u-Amount d-flex">
                                         <i class="fa-solid fa-naira-sign fa-2x text-light"></i>
+                                        <div id="userBalances"></div>
                                     </div>
 
                                 </div>
@@ -80,6 +81,9 @@
             <input type="text" placeholder="Enter Narration" id="transferNarration">
         </div>
     </div>
+
+
+  
 
     <button class="btn t-btn" onclick="sendToReceipt()">CONTINUE</button>
     </div>
